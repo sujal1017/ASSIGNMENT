@@ -1,0 +1,44 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Add Student</title>
+
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Add Student</h1>
+
+<form method="POST">
+
+{% csrf_token %}
+
+Name
+<input type="text" name="name">
+
+USN
+<input type="text" name="usn">
+
+Semester
+<input type="number" name="sem">
+
+Branch
+<input type="text" name="branch">
+
+<button type="submit">Save Student</button>
+
+</form>
+
+</div>
+
+</body>
+
+</html>

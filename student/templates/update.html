@@ -1,0 +1,44 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Update Student</title>
+
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Update Student</h1>
+
+<form method="POST">
+
+{% csrf_token %}
+
+Name
+<input type="text" name="name" value="{{ student.name }}">
+
+USN
+<input type="text" name="usn" value="{{ student.usn }}">
+
+Semester
+<input type="number" name="sem" value="{{ student.sem }}">
+
+Branch
+<input type="text" name="branch" value="{{ student.branch }}">
+
+<button type="submit">Update Student</button>
+
+</form>
+
+</div>
+
+</body>
+
+</html>

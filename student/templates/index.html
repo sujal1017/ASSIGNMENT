@@ -1,0 +1,58 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Student Portal</title>
+
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Student Registration Portal</h1>
+
+<a href="/add/" class="add-btn">Add Student</a>
+
+<table>
+
+<tr>
+<th>Name</th>
+<th>USN</th>
+<th>Sem</th>
+<th>Branch</th>
+<th>Actions</th>
+</tr>
+
+{% for s in students %}
+
+<tr>
+
+<td>{{ s.name }}</td>
+<td>{{ s.usn }}</td>
+<td>{{ s.sem }}</td>
+<td>{{ s.branch }}</td>
+
+<td>
+
+<a href="/update/{{ s.id }}" class="edit">Edit</a>
+
+<a href="/delete/{{ s.id }}" class="delete">Delete</a>
+
+</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+</div>
+
+</body>
+</html>
